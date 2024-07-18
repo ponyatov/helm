@@ -2,7 +2,7 @@ module Main exposing (main)
 
 import Browser
 import Debug exposing (log)
-import Html exposing (button, div, input, text)
+import Html exposing (button, div, input, text, img)
 import Html.Attributes exposing (id, placeholder, required)
 import Html.Events exposing (onClick)
 import String exposing (fromInt)
@@ -22,14 +22,14 @@ type Message
 
 update msg model =
     let
-        logmodel =
+        _ =
             log "model" model
     in
     case msg of
         Add ->
             let
-                logmsg =
-                    log "update" "Add"
+                _ =
+                    log "update" msg
             in
             { model | value = model.value + 1 }
 

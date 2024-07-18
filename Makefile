@@ -1,5 +1,6 @@
 # var
 MODULE = $(notdir $(CURDIR))
+PORT  ?= 12345
 
 # dir
 CWD  = $(CURDIR)
@@ -9,6 +10,7 @@ NBIN = $(CWD)/node_modules/.bin
 CURL = curl -L -o
 ELM  = $(NBIN)/elm
 ELF  = $(NBIN)/elm-format
+ELV  = $(NBIN)/elm-live --path-to-elm=$(ELM) --port=$(PORT)
 
 # src
 E += src/Main.elm $(wildcard src/*.elm)
@@ -20,9 +22,9 @@ all: $(H)
 $(H): $(E)
 	$(ELM) make $^ --output=$@
 
-.PHONY: reactor
-reactor:
-	$(ELM) $@
+.PHONY: live
+live: $(E)
+	$(ELV) $^
 
 # format
 .PHONY: format
