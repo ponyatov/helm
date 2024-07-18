@@ -3,14 +3,15 @@ MODULE = $(notdir $(CURDIR))
 PORT  ?= 12345
 
 # dir
-CWD  = $(CURDIR)
-NBIN = $(CWD)/node_modules/.bin
+CWD    = $(CURDIR)
+NBIN   = $(CWD)/node_modules/.bin
+STATIC = $(CWD)/static
 
 # tool
 CURL = curl -L -o
 ELM  = $(NBIN)/elm
 ELF  = $(NBIN)/elm-format
-ELV  = $(NBIN)/elm-live --path-to-elm=$(ELM) --port=$(PORT)
+ELV  = $(NBIN)/elm-live
 
 # src
 E += src/Main.elm $(wildcard src/*.elm)
@@ -24,7 +25,9 @@ $(H): $(E)
 
 .PHONY: live
 live: $(E)
-	$(ELV) $^
+	$(ELV) $^ \
+		--path-to-elm=$(ELM) --port=$(PORT) -d $(STATIC) \
+		-- --output=$(H)
 
 # format
 .PHONY: format

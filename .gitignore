@@ -5,6 +5,5 @@
 /docs/
 /node_modules/
 /elm-stuff/
-/index.html
 
 !.gitignore

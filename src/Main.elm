@@ -2,8 +2,8 @@ module Main exposing (main)
 
 import Browser
 import Debug exposing (log)
-import Html exposing (button, div, input, text, img)
-import Html.Attributes exposing (id, placeholder, required)
+import Html exposing (button, div, img, input, text)
+import Html.Attributes exposing (id, placeholder, required, src)
 import Html.Events exposing (onClick)
 import String exposing (fromInt)
 
@@ -40,13 +40,9 @@ view model =
         , div [] []
         , input [ id "val", placeholder model.name, required True ] []
         , button [ onClick Add ] [ text "Add" ]
+        , img [ src "control.png" ] []
         ]
 
 
 main =
     Browser.sandbox { init = init, view = view, update = update }
-
-
-
--- hello name =
---     "Hello" ++ name ++ " !"
