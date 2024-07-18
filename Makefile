@@ -14,7 +14,8 @@ ELF  = $(NBIN)/elm-format
 ELV  = $(NBIN)/elm-live
 
 # src
-E += src/Main.elm $(wildcard src/*.elm)
+E += src/Main.elm
+# $(wildcard src/*.elm)
 H  = static/index.html
 
 # all
