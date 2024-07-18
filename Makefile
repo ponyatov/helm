@@ -48,6 +48,7 @@ doc: ../doc/Elm/elm-language.pdf
 .PHONY: install update ref gz
 install: doc ref gz
 	$(MAKE) update
+	npm install
 update:
 	sudo apt update
 	sudo apt install -uy `cat apt.txt`
