@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/ponyatov/helm/issues"
   },
-  "homepage": "https://github.com/ponyatov/helm#readme"
+  "homepage": "https://github.com/ponyatov/helm#readme",
+  "dependencies": {
+    "elm": "^0.19.1-6"
+  }
 }
