@@ -4,4 +4,7 @@
     font-family: monospace;
 }
 
-img#biglogo { height: 128px; width: auto; }
+img#biglogo {
+    position: absolute; top:0; right: 0;
+    height: 128px; width: auto;
+}

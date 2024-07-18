@@ -25,6 +25,7 @@ $(H): $(E)
 
 .PHONY: live
 live: $(E)
+	iwatch -c 'touch $(E)' static/*.css &
 	$(ELV) $^ \
 		--path-to-elm=$(ELM) --port=$(PORT) -d $(STATIC) \
 		-- --output=$(H)
