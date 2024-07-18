@@ -8,10 +8,6 @@ import Html.Events exposing (onClick)
 import String exposing (fromInt)
 
 
-add a b =
-    a + b
-
-
 init =
     { value = 0, name = "Kris" }
 
@@ -46,7 +42,7 @@ view model =
         , div [] []
         , input [ id "val", placeholder model.name, required True ] []
         , button [ onClick Add ] [ text "Add" ]
-        , img [ src "control.png" ] []
+        , img [ id "biglogo", src "control.png" ] []
         ]
 
 

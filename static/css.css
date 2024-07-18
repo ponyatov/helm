@@ -1,3 +1,7 @@
-html, body {
+* {
     background: #222;
+    color: lightgreen;
+    font-family: monospace;
 }
+
+img#biglogo { height: 128px; width: auto; }
