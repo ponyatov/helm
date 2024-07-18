@@ -2,8 +2,8 @@ module Main exposing (main)
 
 import Browser
 import Debug exposing (log)
-import Html exposing (button, div, img, input, text)
-import Html.Attributes exposing (id, placeholder, required, src)
+import Html exposing (button, div, img, input, node, text)
+import Html.Attributes exposing (href, id, placeholder, rel, required, src)
 import Html.Events exposing (onClick)
 import String exposing (fromInt)
 
@@ -34,9 +34,15 @@ update msg model =
             { model | value = model.value + 1 }
 
 
+css path =
+    node "link" [ rel "stylesheet", href path ] []
+
+
 view model =
-    div []
-        [ text (fromInt model.value)
+    div
+        []
+        [ css "/css.css"
+        , text (fromInt model.value)
         , div [] []
         , input [ id "val", placeholder model.name, required True ] []
         , button [ onClick Add ] [ text "Add" ]
