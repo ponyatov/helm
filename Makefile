@@ -35,9 +35,16 @@ format: tmp/format_elm
 tmp/format_elm: $(E)
 	$(ELF) --yes $? && touch $@
 
+# doc
+.PHONY: doc
+doc: ../doc/Elm/elm-language.pdf
+
+../doc/Elm/elm-language.pdf:
+	$(CURL) $@ https://riptutorial.com/Download/elm-language.pdf
+
 # install
 .PHONY: install update ref gz
-install: ref gz
+install: doc ref gz
 	$(MAKE) update
 update:
 	sudo apt update
