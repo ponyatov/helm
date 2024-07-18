@@ -1,5 +1,17 @@
-module Main exposing (..)
+module Main exposing (main)
+
+import Browser
+import Html exposing (div, text)
 
 
-hello name =
-    "Hello" ++ name ++ " !"
+add a b =
+    a + b
+
+
+main =
+    text "Hello"
+
+
+
+-- hello name =
+--     "Hello" ++ name ++ " !"

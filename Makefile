@@ -12,11 +12,17 @@ ELF  = $(NBIN)/elm-format
 
 # src
 E += src/Main.elm $(wildcard src/*.elm)
+H  = static/index.html
 
 # all
 .PHONY: all
-all: $(E)
-	$(ELM) make $^
+all: $(H)
+$(H): $(E)
+	$(ELM) make $^ --output=$@
+
+.PHONY: reactor
+reactor:
+	$(ELM) $@
 
 # format
 .PHONY: format
