@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/ponyatov/helm#readme",
   "dependencies": {
-    "elm": "^0.19.1-6"
+    "elm": "^0.19.1-6",
+    "elm-format": "^0.8.7"
   }
 }
